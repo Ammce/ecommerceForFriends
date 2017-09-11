@@ -1,0 +1,32 @@
+<% layout('layout') -%>
+
+<div class="container-fluid">
+    
+    <div class="row">
+        
+        <div class="col=sm-6 col-md-4">
+            
+            <img class="img-circle img-responsive img-center" src="<%= user.profile.picture %>" alt="">
+            <br>
+            
+
+            Hello <%= user.profile.name %>
+
+            Your address is : <%= user.address %>
+            
+            <% if (user.address == " " || typeof user.address == 'undefined') { %>
+            
+             <p>Address: <span style="color: red"> You have no address</span></p>
+            <% } else { %>
+            
+             <p>Your address is : <%= user.address %> </p>
+            
+            <% } %>
+            
+            <a href="/edit-profile" class="btn btn-primary btn-lg"> Edit Profile</a>
+            
+        </div>
+        
+    </div>
+    
+</div>
